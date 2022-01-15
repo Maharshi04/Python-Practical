@@ -1,0 +1,189 @@
+# student id : 20CE048
+# student Name : Maharshi Limbachiya
+
+#  DICTIONARY :
+
+#  a. Write a Python script to check whether a given key already exists in a dictionary.
+from typing import List
+
+
+mydict = {
+    1:'lion',
+    2:'tiger',
+    3:'rat'    
+}
+def existkey(x):
+    if x in mydict:
+        print('given key is exist in dictionary')
+    else:
+        print('given key is not exist in dictionary')  
+
+print('OUTPUTS OF DICTIONARY  :  ')
+print('\nOutput of a :')
+existkey(2)    
+existkey(5)
+
+# b. Write a Python script to merge two Python dictionaries
+
+mydict = {
+    1:'lion',
+    2:'tiger',
+    3:'rat'    
+}
+mydict1 = {
+    'a':'dog',
+    'b':'cat',
+    'c':'cow'
+}
+mydict2 = {**mydict,**mydict1}  ##this is how we can merge two or more dictionaries
+
+print('\nOutput of b :')
+print("first dictionary :",mydict)
+print("second dictionary :",mydict1)
+print("merged dictionary :",mydict2)
+
+# c. Write a Python program to sum all the items in a dictionary.
+
+mydict ={
+     1:10,
+     2:20,
+     3:30
+ }
+ 
+print('\nOutput of c :')
+print(sum(mydict.values())) ##sum is built-in function in python from which we can sum all the values of dictionaries  
+
+# d. Write a Python script to add a key to a dictionary.
+# Sample Dictionary : {0: 10, 1: 20}
+# Expected Result : {0: 10, 1: 20, 2: 30}
+
+sampdict ={
+    0:10,
+    1:20
+}
+sampdict.update({2:30}) ##using update we can update the dictionary
+
+print('\nOutput of d :')
+print(sampdict)
+
+# e. Write a Python script to concatenate following dictionaries to create a new one.
+# Sample Dictionary :
+# dic1={1:10, 2:20}
+# dic2={3:30, 4:40}
+# dic3={5:50,6:60}
+# Expected Result : {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+
+dic1={1:10, 2:20}
+dic2={3:30, 4:40} 
+dic3={5:50,6:60}
+
+res={**dic1,**dic2,**dic3} ##this is how also we can concatenate two or more dictionaries
+print('\nOutput of e :')
+print(res)
+
+# TUPLES :
+ 
+#  a. Write a Python program to create a tuple with different data types.
+
+mytuple = ("tuple",26,3.5,True) #Create a tuple with different data types
+
+print('\n\nOUTPUT OF TUPLES  : ')
+print('\nOutput of a :')
+print(mytuple)
+
+# b. Write a Python program to create a tuple with numbers and print one item.
+
+mytuple=(10,20,30,40)
+print('\nOutput of b :')
+print(mytuple[2])  #print one item of tuple using index of item in tuple
+
+# c. Write a Python program to add an item in a tuple.
+
+mytuple=('tiger','lion','rabbit','monkey') #We can't add elements to a tuple because of their immutable property
+mytuple1=list(mytuple)
+mytuple1.append('dog') #adding element using append after converting into list
+print('\nOutput of c :')
+print(tuple(mytuple1))
+
+
+# d. Write a Python program to convert a tuple to a string.
+
+mytuple=('T','I','G','E','R')
+string = ''.join(mytuple) #connect element of tuple to convert into a string
+print('\nOutput of d :')
+print(string)
+
+# e. Write a Python program to find the length of a tuple
+
+mytuple =(10,20,30,40)
+print('\nOutput of e :')
+print(mytuple)
+print(len(mytuple)) # count the length of the tuple
+
+# SET  : 
+ 
+#  a. Write a Python program to add member(s) in a set and clear a set
+
+myset ={"apple","orange","grapes","banana"}
+myset.add("mango")
+print('\n\nOUTPUT OF SET  : ')
+print('\nOutput of a :')
+print(myset)
+myset.clear()
+print(myset)
+
+
+# b. Write a Python program to remove an item from a set if it is present in the set.
+
+myset ={"apple","orange","grapes","banana"}
+def is_present(x):
+    if x in myset:
+        myset.remove(x)
+        print(myset)
+    else:
+        print('this item is not in set')   
+print('\nOutput of b : ') 
+is_present("grapes")
+is_present("mango")
+
+# c. Write a Python program to create an intersection, Union, difference of sets.
+
+myset ={"apple","orange","grapes","banana"}
+myset1={"cherry","chikoo","apple"}
+print('\nOutput of c : ') 
+print("intesection of two sets :",myset.intersection(myset1))
+print("union of two sets :",myset.union(myset1))
+print("difference of two sets :",myset.difference(myset1))
+
+# d. Write a Python program to find maximum and the minimum value in a set.
+
+myset={10,20,30,40,70}
+print('\nOutput of d : ') 
+print("Maximum value of set",max(myset))
+print("Minimum value of set",min(myset))
+
+# e. Write a Python program to find the most common elements and their counts from list, tuple, dictionary.
+
+# most common from list
+def most_common(List):
+ return max(set(List), key = List.count)
+List = [5, 1, 2, 5, 1, 5]
+d=most_common(List)
+print("the element = ",d," the repetition = ",List.count(d))
+print("\n")
+
+ #most common from tuple
+def most_common(List):
+        return max(set(List), key = List.count)
+List = list((2, 4, 7, 4, 5, 0, 3,))#converted tuple to list
+d=most_common(List)
+print("the element = ",d," the repetition = ",List.count(d))
+print("\n")
+
+#most common from dictionary
+def most_common(List):
+        return max(set(List), key = List.count)
+dict={1:11,2:22,3:33,4:11,5:11}
+List = list(dict.values())
+d=most_common(List)
+print("the element = ",d," the repetition = ",List.count(d))
