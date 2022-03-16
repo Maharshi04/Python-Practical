@@ -30,7 +30,7 @@
 # Explanation: The list of room numbers contains 31 elements. Since K is 5, there must be 6 groups of families. In the given list, all of the numbers repeat 5 times except for room number 8.
 #              Hence,  8 is the Captain's room number.
 
-# github repository link :
+# github repository link : https://github.com/Maharshi04/Python-Practical/blob/main/Pract3.py
 
 k=int(input())  
 s=map(int,input().split())  
